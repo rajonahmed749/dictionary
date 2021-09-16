@@ -2,6 +2,7 @@ import { Container, TextField } from '@material-ui/core';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Definitions from './components/Definitions/Definitions';
 import Header from './components/Header/Header';
 
 
@@ -12,7 +13,7 @@ function App() {
 
   const dictionaryApi = async () => {
     try {
-      const data = await axios.get('https://api.dictionaryapi.dev/api/v2/entries/en/plane');
+      const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
       console.log("actual data", data);
       setMeanings(data.data)
     }
@@ -25,7 +26,7 @@ function App() {
 
   useEffect(() => {
     dictionaryApi()
-  }, [])
+  }, [word, category])
 
   return (
     <div style={{ height: '100vh', backgroundColor: '#282c34', color: 'white' }}>
@@ -33,6 +34,7 @@ function App() {
         maxWidth="md" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
       >
         <Header category={category} setCategory={setCategory} word={word} setWord={setWord} />
+        <Definitions/>
       </Container>
     </div>
   );
