@@ -14,7 +14,7 @@ function App() {
   const dictionaryApi = async () => {
     try {
       const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
-      console.log("actual data", data);
+      // console.log("actual data", data);
       setMeanings(data.data)
     }
     catch (error) {
@@ -22,7 +22,7 @@ function App() {
     }
   }
 
-  console.log("from state", meanings);
+  // console.log("from state", meanings);
 
   useEffect(() => {
     dictionaryApi()
@@ -34,7 +34,9 @@ function App() {
         maxWidth="md" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
       >
         <Header category={category} setCategory={setCategory} word={word} setWord={setWord} />
-        <Definitions/>
+        {meanings &&
+          (<Definitions word={word} category={category} meanings={meanings} />)
+        }
       </Container>
     </div>
   );
