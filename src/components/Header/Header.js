@@ -3,13 +3,13 @@ import React from 'react';
 import "./Header.css"
 import categories from "../../data/category"
 
-const Header = ({ category, setCategory, word, setWord }) => {
+const Header = ({ category, setCategory, word, setWord, LightMode }) => {
     const darkTheme = createTheme({
         palette: {
             primary: {
-                main: "#fff"
+                main: LightMode ? "#000" : "#fff"
             },
-            type: 'dark',
+            type: LightMode ? "light" : 'dark',
         },
     });
 

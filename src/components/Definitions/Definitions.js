@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Definitions.css"
-const Definitions = ({ category, meanings, word }) => {
+const Definitions = ({ category, meanings, word, LightMode }) => {
     return (
         <div className="meanings">
             {
@@ -18,7 +18,7 @@ const Definitions = ({ category, meanings, word }) => {
                 word === "" ? (<span className="subTitle">Start by typing a word in search</span>) : (
                     meanings.map((mean) => mean.meanings.map((item) => (
                         item.definitions.map((def) => (
-                            <div className="singleMean" style={{ backgroundColor: "white", color: "black" }}>
+                            <div className="singleMean" style={{ backgroundColor: LightMode ? "#3b5360" : "white", color: LightMode ? "white" : "black" }}>
                                 <b>{def.definition}</b>
                                 <hr style={{ backgroundColor: "black", width: "100%" }} />
                                 {
