@@ -1,18 +1,20 @@
-import { Container } from '@material-ui/core';
-import axios from 'axios';
+import React from "react";
 import { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch as ChangePath,
+  Route,
+  Link
+} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './App.css';
-import Definitions from './components/Definitions/Definitions';
-import Header from './components/Header/Header';
+import Home from "./components/Home/Home";
+import Profile from "./components/Profile/Profile";
 import { withStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 import Switch from '@material-ui/core/Switch';
 
-
 function App() {
-  const [word, setWord] = useState("");
-  const [meanings, setMeanings] = useState([]);
-  const [category, setCategory] = useState("en");
   const [LightMode, setLightMode] = useState(false);
   const DarkMode = withStyles({
     switchBase: {
@@ -27,63 +29,36 @@ function App() {
     checked: {},
     track: {},
   })(Switch);
-
-  const dictionaryApi = async () => {
-    try {
-      const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
-      // console.log("actual data", data);
-      setMeanings(data.data)
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }
-
-  // console.log("from state", meanings);
-
-  useEffect(() => {
-    dictionaryApi()
-  }, [word, category])
-
   return (
-    <div style={{
-      height: '100vh',
-      backgroundColor: LightMode ? "#fff" : '#282c34',
-      color: LightMode ? "black" : 'white',
-      transition: "all 0.5s linear"
-    }}
-    >
-      <Container
-        maxWidth="md" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100vh',
-          justifyContent: "space-evenly"
-        }}
-      >
-        <div style={{ position: "absolute", top: 0, right: 15, paddingTop: 10 }}>
-          <span>{LightMode ? "Dark" : "Light"} Mode</span>
-          <DarkMode
-            checked={LightMode} onChange={() => setLightMode(!LightMode)}
-          />
+    <Router>
+      <div style={{
+        minHeight: "100vh",
+        backgroundColor: LightMode ? "#fff" : '#282c34',
+        color: LightMode ? "black" : 'white',
+        transition: "all 0.5s linear"
+      }}>
+        <div className="menubar" style={{ top: 0, paddingTop: 10 }}>
+          <div>
+            <Link to="/"><i style={{ color: LightMode ? "black" : "white" }} className="fas fa-home icons fa-lg"></i></Link>
+            <Link to="/profile"><i style={{ color: LightMode ? "black" : "white" }} className="fas fa-chalkboard-teacher icons fa-lg"></i></Link>
+          </div>
+          <div>
+            <span>{LightMode ? "Dark" : "Light"} Mode</span>
+            <DarkMode
+              checked={LightMode} onChange={() => setLightMode(!LightMode)}
+            />
+          </div>
         </div>
-        <Header
-          category={category}
-          setCategory={setCategory}
-          word={word}
-          setWord={setWord}
-          LightMode={LightMode}
-        />
-        {meanings &&
-          (<Definitions
-            word={word}
-            category={category}
-            meanings={meanings}
-            LightMode={LightMode}
-          />)
-        }
-      </Container>
-    </div>
+        <ChangePath>
+          <Route exact path="/">
+            <Home LightMode={LightMode} />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </ChangePath>
+      </div>
+    </Router>
   );
 }
 

@@ -18,18 +18,22 @@
         justify-content: space-evenly;
         height: 25vh;
     }
+
     .title {
         font-size: 7vw;
     }
 }
+
 .inputs {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
+
 .search {
     width: 43%;
 }
+
 .select {
     width: 43%;
 }

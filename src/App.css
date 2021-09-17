@@ -1,0 +1,9 @@
+.menubar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icons {
+    padding: 8px
+}
