@@ -7,3 +7,11 @@
 .icons {
     padding: 8px
 }
+
+.footer{
+    text-align:center;
+    padding: 20px 10px;
+}
+.footerLink{
+    padding:10px
+}

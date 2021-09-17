@@ -3,9 +3,10 @@
     flex-direction: column;
     overflow-y: scroll;
     padding-bottom: 20px;
+    scrollbar-width: thin !important;
     height: 55vh;
-    border: 10px solid rgb(105, 105, 105);
-    border-radius: 10px;
+    border: 4px dotted #40407a;
+    border-radius: 14px;
     padding: 10px 20px;
     overflow-x: hidden;
 }
@@ -13,6 +14,7 @@
 .subTitle {
     font-size: 5vw;
     font-family: "Montserrat", sans-serif;
+    text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -27,6 +29,6 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    padding: 10px 20px;
-    margin: 10px 0;
+    padding: 7px 15px;
+    margin: 6px 0;
 }

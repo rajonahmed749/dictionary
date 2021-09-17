@@ -3,6 +3,7 @@ import "./Definitions.css"
 const Definitions = ({ category, meanings, word, LightMode }) => {
     return (
         <div className="meanings">
+            {/* audio */}
             {
                 meanings[0] && word && category === 'en' && (
                     <audio
@@ -15,11 +16,11 @@ const Definitions = ({ category, meanings, word, LightMode }) => {
                 )
             }
             {
-                word === "" ? (<span className="subTitle">Start by typing a word in search</span>) : (
+                word === "" ? (<span className="subTitle">Search something new!</span>) : (
                     meanings.map((mean) => mean.meanings.map((item) => (
                         item.definitions.map((def) => (
                             <div className="singleMean" style={{ backgroundColor: LightMode ? "#3b5360" : "white", color: LightMode ? "white" : "black" }}>
-                                <b>{def.definition}</b>
+                                <b style={{ textAlign: "center" }}>{def.definition}</b>
                                 <hr style={{ backgroundColor: "black", width: "100%" }} />
                                 {
                                     def.example && (
@@ -33,7 +34,7 @@ const Definitions = ({ category, meanings, word, LightMode }) => {
                                     def.synonyms && (
                                         <span>
                                             <b> Synonyms: </b>
-                                            {def.synonyms.map((s) => `${s}, `)}
+                                            {def.synonyms.map((s) => ` ${s}, `)}
                                         </span>
                                     )
                                 }

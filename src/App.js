@@ -6,13 +6,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 import './App.css';
 import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import { withStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 import Switch from '@material-ui/core/Switch';
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [LightMode, setLightMode] = useState(false);
@@ -57,6 +57,7 @@ function App() {
             <Profile />
           </Route>
         </ChangePath>
+        <Footer LightMode={LightMode}/>
       </div>
     </Router>
   );
