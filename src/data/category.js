@@ -1,16 +1,16 @@
 const categories = [
-    { value: "English", label: "en" },
-    { value: "Hindi", label: "hi" },
-    { value: "Spanish", label: "es" },
-    { value: "French", label: "fr" },
-    { value: "Japanese", label: "ja" },
-    { value: "Russian", label: "ru" },
-    { value: "German", label: "de" },
-    { value: "Italian", label: "it" },
-    { value: "Korean", label: "ko" },
-    { value: "Brazilian Portuguese", label: "pt-BR" },
-    { value: "Arabic", label: "ar" },
-    { value: "Turkish", label: "tr" },
-  ];
-  
-  export default categories;
+  { value: "English", label: "en" },
+  { value: "Hindi", label: "hi" },
+  { value: "German", label: "de" },
+  { value: "Korean", label: "ko" },
+  { value: "Spanish", label: "es" },
+  { value: "Turkish", label: "tr" },
+  { value: "French", label: "fr" },
+  { value: "Japanese", label: "ja" },
+  { value: "Russian", label: "ru" },
+  { value: "Italian", label: "it" },
+  { value: "Arabic", label: "ar" },
+
+];
+
+export default categories;

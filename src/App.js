@@ -33,7 +33,7 @@ function App() {
     <Router>
       <div style={{
         minHeight: "100vh",
-        backgroundColor: LightMode ? "#fff" : '#282c34',
+        backgroundColor: LightMode ? "#fff" : '#0a192f',
         color: LightMode ? "black" : 'white',
         transition: "all 0.5s linear"
       }}>
