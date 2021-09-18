@@ -8,13 +8,13 @@ const Profile = () => {
         <Container >
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6} md={4}>
-                    
-                    </Grid>
+
+                </Grid>
                 <Grid item xs={11} sm={6} md={4} >
-                <AddWord/>
+                    <AddWord />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
-                
+
                 </Grid>
             </Grid>
         </Container>

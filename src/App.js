@@ -13,6 +13,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 import Switch from '@material-ui/core/Switch';
 import Footer from "./components/Footer/Footer";
+import Learning from "./components/Learning/Learning";
 
 function App() {
   const [LightMode, setLightMode] = useState(false);
@@ -41,7 +42,8 @@ function App() {
           <div>
             <Link to="/"><i style={{ color: LightMode ? "black" : "white" }} className="fas fa-home icons fa-lg"></i></Link>
             <Link to="/profile"><i style={{ color: LightMode ? "black" : "white" }} className="fas fa-chalkboard-teacher icons fa-lg"></i></Link>
-          </div>
+            <Link to="/learning"><i style={{ color: LightMode ? "black" : "white" }} className="fab fa-leanpub icons fa-lg"></i></Link>
+          </div> 
           <div>
             <span>{LightMode ? "Dark" : "Light"} Mode</span>
             <DarkMode
@@ -55,6 +57,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/learning">
+            <Learning LightMode={LightMode}/>
           </Route>
         </ChangePath>
         <Footer LightMode={LightMode}/>
