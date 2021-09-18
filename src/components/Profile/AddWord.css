@@ -15,3 +15,9 @@
   border: none;
   border-radius: 5px;
 }
+
+.addWord {
+  display: flex;
+  justify-content: center;
+
+}

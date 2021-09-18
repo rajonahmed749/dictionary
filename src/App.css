@@ -5,18 +5,20 @@
 }
 
 .icons {
-    padding: 8px
+    padding: 9px
 }
 
 /* Footer area */
-.footer{
-    text-align:center;
+.footer {
+    text-align: center;
     padding: 20px 10px;
 }
-.footerLink{
-    padding:10px;
+
+.footerLink {
+    padding: 10px;
     margin-left: 3px;
 }
-.footerLine{
+
+.footerLine {
     text-decoration: none;
 }

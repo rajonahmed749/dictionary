@@ -6,6 +6,9 @@ const Profile = () => {
 
     return (
         <Container >
+            <div className="addWord">
+                <h3>Add your word</h3>
+            </div>
             <Grid container spacing={2} direction="column"
                 alignItems="center"
                 justify="center">
