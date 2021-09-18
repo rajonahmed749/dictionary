@@ -1,14 +1,16 @@
 .form-card {
-    margin: 4rem 4rem 4rem 0;
-    padding: 2rem;
-    background-color: lightgray;
-    border-radius: 1rem;
-  }
-  .form-card input {
-    margin: 1rem;
-    padding: 0.5rem;
-    width: 300px;
-    border: none;
-    border-radius: 5px;
-  }
-  
+  margin-top: 10px;
+  padding: 7px;
+  background-color: #5b6c83be;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 #dbb4b433, 0 6px 20px 0 #c36f6f30;
+}
+
+.form-card input {
+  margin: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}

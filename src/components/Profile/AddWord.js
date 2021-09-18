@@ -9,11 +9,10 @@ const AddWord = () => {
     console.log(watch("example"));
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="form-card">
-            <input type="text" name="bookName" placeholder="Enter Book Name" {...register("bookName", { required: true })} />
-            <input type="text" name="authorName" placeholder="Enter Author Name" {...register("authorName", { required: true })} />
-            <input type="number" name="price" placeholder="Enter Price" {...register("price", { required: true })} />
-            {/* <input onChange={handleImage} type="file" /> */}
-            <input type="submit" />
+            <input type="text" name="word" placeholder="Type a word" {...register("word", { required: true })} />
+            <input type="text" name="wordMean" minlength="3" placeholder="Word meaning" {...register("wordMean", { required: true })} />
+            <input type="text" name="synonym" minlength="3" placeholder="Word's synonym" {...register("synonym", { required: true })} />
+            <input type="submit" value="Done" />
         </form>
     );
 };
