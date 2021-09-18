@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -14,6 +14,7 @@ import { grey } from '@material-ui/core/colors';
 import Switch from '@material-ui/core/Switch';
 import Footer from "./components/Footer/Footer";
 import Learning from "./components/Learning/Learning";
+export const UserContext = createContext()
 
 function App() {
   const [LightMode, setLightMode] = useState(false);
@@ -39,11 +40,18 @@ function App() {
         transition: "all 0.5s linear"
       }}>
         <div className="menubar" style={{ top: 0, paddingTop: 10 }}>
+          {/* Navbar */}
           <div>
-            <Link to="/"><i style={{ color: LightMode ? "black" : "white" }} className="fas fa-home icons fa-lg"></i></Link>
-            <Link to="/profile"><i style={{ color: LightMode ? "black" : "white" }} className="fas fa-chalkboard-teacher icons fa-lg"></i></Link>
-            <Link to="/learning"><i style={{ color: LightMode ? "black" : "white" }} className="fab fa-leanpub icons fa-lg"></i></Link>
-          </div> 
+            <Link to="/">
+              <i style={{ color: LightMode ? "black" : "white" }} className="fas fa-home icons fa-lg"></i>
+            </Link>
+            <Link to="/addWord">
+              <i style={{ color: LightMode ? "black" : "white" }} className="fas fa-chalkboard-teacher icons fa-lg"></i>
+            </Link>
+            <Link to="/learning">
+              <i style={{ color: LightMode ? "black" : "white" }} className="fab fa-leanpub icons fa-lg"></i>
+            </Link>
+          </div>
           <div>
             <span>{LightMode ? "Dark" : "Light"} Mode</span>
             <DarkMode
@@ -55,14 +63,14 @@ function App() {
           <Route exact path="/">
             <Home LightMode={LightMode} />
           </Route>
-          <Route path="/profile">
+          <Route path="/addWord">
             <Profile />
           </Route>
           <Route path="/learning">
-            <Learning LightMode={LightMode}/>
+            <Learning LightMode={LightMode} />
           </Route>
         </ChangePath>
-        <Footer LightMode={LightMode}/>
+        <Footer LightMode={LightMode} />
       </div>
     </Router>
   );

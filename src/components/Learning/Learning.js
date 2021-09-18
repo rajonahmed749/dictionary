@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import preloader from "../../data/preloader.gif";
+import "./Learning.css"
 
 
 const Learning = ({ LightMode }) => {
@@ -16,12 +18,18 @@ const Learning = ({ LightMode }) => {
         createData('sudfper', 'the fdfdfest dfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher'),
         createData('Icdfsdfsdwich', 'the fdfdfesdfgfd dfgf sdsfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher')
     ];
+
+    let count = 1;
     return (
         <Container >
             <div className="addWord">
                 <h3>Your word summary <i style={{ color: LightMode ? "black" : "white" }} className="fas fa-sort-alpha-down fa-lg"></i>
                 </h3>
             </div>
+            <div className="addWord">
+                <img id="preloader" src={preloader} alt="preloader" />
+            </div>
+
             <TableContainer >
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -48,7 +56,7 @@ const Learning = ({ LightMode }) => {
                                     <TableCell
                                         component="th" scope="row"
                                         style={{ color: LightMode ? "black" : "white" }}>
-                                        {row.name}
+                                        {count++}. {row.name}
                                     </TableCell>
                                     <TableCell
                                         style={{ color: LightMode ? "black" : "white" }} align="center">{row.calories}

@@ -6,14 +6,14 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 8px 0 #dbb4b433, 0 6px 20px 0 #c36f6f30;
+  box-shadow: 0 4px 8px 0 #b8841333, 0 6px 20px 0 #af541f33;
 }
 
 .form-card input {
-  margin: 1rem;
+  margin: 12px;
   padding: 0.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 .addWord {
