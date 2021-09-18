@@ -14,6 +14,7 @@ import { grey } from '@material-ui/core/colors';
 import Switch from '@material-ui/core/Switch';
 import Footer from "./components/Footer/Footer";
 import Learning from "./components/Learning/Learning";
+import Login from "./components/Login/Login";
 export const UserContext = createContext()
 
 function App() {
@@ -67,6 +68,9 @@ function App() {
             </Route>
             <Route path="/addWord">
               <Profile />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/learning">
               <Learning LightMode={LightMode} />
