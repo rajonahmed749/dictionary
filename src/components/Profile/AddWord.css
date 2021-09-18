@@ -1,5 +1,6 @@
 .form-card {
   margin-top: 10px;
+  margin-inline: auto;
   padding: 7px;
   background-color: #5b6c83be;
   border-radius: 5px;

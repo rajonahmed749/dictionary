@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import WantoAdd from './WantoAdd';
 
 const Learning = ({ LightMode }) => {
     function createData(name, calories, fat, carbs, protein) {
@@ -10,12 +11,14 @@ const Learning = ({ LightMode }) => {
         createData('super', 'the best thing', 'excellent', 'other'),
         createData('fake', 'false news', 'bad', 'others'),
         createData('goods', 'vagetables', 'excellent', 'other'),
+        createData('কলা', 'এক প্রকার সবজি', 'সব্জি', 'ভিটামিন'),
         createData('supasdfer', 'thsdf thing', 'excelsdfent', 'odsfer'),
         createData('sudfper', 'the fdfdfest dfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher'),
-        createData('Icdfsdfsdwich', 'the fdfdfesdfgfd dfg dfg fg dfg dfg df sdfg dfg sdf dfg  sdg sdfg s dsf dsf df d dft ddsfdsfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher')
+        createData('Icdfsdfsdwich', 'the fdfdfesdfgfd dfgf sdsfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher')
     ];
     return (
         <Container >
+           <WantoAdd/>
             <TableContainer >
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>

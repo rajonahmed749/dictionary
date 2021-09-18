@@ -6,15 +6,15 @@ const Profile = () => {
 
     return (
         <Container >
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={4}>
-
+            <Grid container spacing={2} direction="column"
+                alignItems="center"
+                justify="center">
+                <Grid item xs={12} sm={6} md={2}>
                 </Grid>
-                <Grid item xs={11} sm={6} md={4} >
+                <Grid item xs={12} sm={6} md={6} >
                     <AddWord />
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-
+                <Grid item xs={12} sm={6} md={2}>
                 </Grid>
             </Grid>
         </Container>
