@@ -1,10 +1,46 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import "./AddWord.css"
+import { UserContext } from '../../App';
+import "./AddWord.css";
+import { useHistory, useLocation } from 'react-router-dom';
 
 const AddWord = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const [word, setWord] = useState({});
+    const history = useHistory();
+    console.log("from addeded", loggedInUser)
+    const onSubmit = data => {
+        console.log(word)
+        const wordData = {
+            word: data.word,
+            wordMean: data.wordMean,
+            synonym: data.synonym,
+            user: loggedInUser.name,
+            userEmail: loggedInUser.email,
+        }
+        setWord(wordData)
+        const url = `http://localhost:7000/addWord`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(wordData),
+        })
+            .then(res => {
+                afterSuccess(`${data.word}`)
+            })
+            .catch((error) => {
+                alert('Sorry, try again');
+            });
+    }
+    const afterSuccess = (word) => {
+        var person = prompt("Your word is added correctly, see your word?", `${word}`);
+        if (person != null) {
+            history.push('/learning')
+        }
+    }
 
     console.log(watch("example"));
     return (

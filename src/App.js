@@ -67,6 +67,9 @@ function App() {
             <Route exact path="/">
               <Home LightMode={LightMode} />
             </Route>
+            {/* <Route path="/addWord">
+              <Profile />
+            </Route> */}
             <PrivateRoute path="/addWord">
               <Profile />
             </PrivateRoute>
