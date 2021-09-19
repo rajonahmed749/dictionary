@@ -1,0 +1,13 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.loginButton {
+    border: 1px solid #1d64b6;
+    padding: 7px;
+    border-radius: 3px;
+}

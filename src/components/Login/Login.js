@@ -5,6 +5,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { UserContext } from '../../App';
+import "./Login.css"
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -26,7 +27,7 @@ const Login = () => {
                 const { displayName, email, photoURL } = result.user;
                 const signedInUser = { name: displayName, email, img: photoURL }
                 setLoggedInUser(signedInUser)
-                // history.replace(from);
+                history.replace(from);
                 console.log(signedInUser);
             }).catch((error) => {
                 var errorCode = error.code;
@@ -37,10 +38,16 @@ const Login = () => {
             });
     }
 
-
     return (
-        <Container >
-            <i onClick={handleGoogle} className="fab fa-google"></i>
+        <Container>
+            <div className="login">
+                <h3>Log in to see / add more word</h3>
+                <span
+                    style={{ cursor: 'pointer' }}
+                    onClick={handleGoogle} className="loginButton"
+                ><i className="fab fa-google"></i>oogle Login
+                    </span>
+            </div>
         </Container>
     );
 };

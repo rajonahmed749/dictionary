@@ -15,6 +15,7 @@ import Switch from '@material-ui/core/Switch';
 import Footer from "./components/Footer/Footer";
 import Learning from "./components/Learning/Learning";
 import Login from "./components/Login/Login";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 export const UserContext = createContext()
 
 function App() {
@@ -66,9 +67,9 @@ function App() {
             <Route exact path="/">
               <Home LightMode={LightMode} />
             </Route>
-            <Route path="/addWord">
+            <PrivateRoute path="/addWord">
               <Profile />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
