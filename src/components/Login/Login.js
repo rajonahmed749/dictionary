@@ -23,19 +23,19 @@ const Login = () => {
             .then((result) => {
                 var credential = result.credential;
                 var token = credential.accessToken;
-                console.log(result.user)
+                // console.log(result.user)
                 const { displayName, email, photoURL } = result.user;
                 const signedInUser = { name: displayName, email, img: photoURL }
                 setLoggedInUser(signedInUser)
                 // storeAuthToken();
                 history.replace(from);
-                console.log(signedInUser);
+                // console.log(signedInUser);
             }).catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 var email = error.email;
                 var credential = error.credential;
-                console.log(errorCode, errorMessage, email, credential);
+                // console.log(errorCode, errorMessage, email, credential);
             });
     }
 
@@ -57,7 +57,7 @@ const Login = () => {
                 <span
                     style={{ cursor: 'pointer' }}
                     onClick={handleGoogle}
-                     className="loginButton"
+                    className="loginButton"
                 ><i className="fab fa-google"></i>oogle Login
                     </span>
             </div>

@@ -20,7 +20,6 @@ const Home = ({ LightMode }) => {
         }
     }
 
-    console.log("from state", meanings);
 
     useEffect(() => {
         dictionaryApi()

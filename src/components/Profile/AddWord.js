@@ -19,7 +19,7 @@ const AddWord = () => {
             userEmail: loggedInUser.email,
         }
         setWord(wordData)
-        const url = `http://localhost:7000/addWord`;
+        const url = `https://mysterious-ridge-35734.herokuapp.com/addWord`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -40,7 +40,7 @@ const AddWord = () => {
             history.push('/learning')
         }
     }
-    
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="form-card">
             <input type="text" name="word" placeholder="Type a word" {...register("word", { required: true })} />

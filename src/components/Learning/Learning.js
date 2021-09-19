@@ -9,9 +9,9 @@ const Learning = ({ LightMode }) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [words, setWords] = useState([])
     const id = loggedInUser.email;
-    console.log(id)
+    
     useEffect(() => {
-        fetch(`http://localhost:7000/getWords/${id}`)
+        fetch(`https://mysterious-ridge-35734.herokuapp.com/getWords/${id}`)
             .then(res => res.json())
             .then(data => {
                 setWords(data)
