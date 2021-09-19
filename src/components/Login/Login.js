@@ -27,6 +27,7 @@ const Login = () => {
                 const { displayName, email, photoURL } = result.user;
                 const signedInUser = { name: displayName, email, img: photoURL }
                 setLoggedInUser(signedInUser)
+                // storeAuthToken();
                 history.replace(from);
                 console.log(signedInUser);
             }).catch((error) => {
@@ -38,13 +39,25 @@ const Login = () => {
             });
     }
 
+    // const storeAuthToken = () => {
+    //     firebase.auth().currentUser.getIdToken(true)
+    //         .then(function (idToken) {
+    //             sessionStorage.setItem('token', idToken);
+    //             history.replace(from);
+    //             console.log(idToken)
+    //         }).catch(function (error) {
+    //             console.log(error)
+    //         });
+    // }
+
     return (
         <Container>
             <div className="login">
                 <h3>Log in to see / add more word</h3>
                 <span
                     style={{ cursor: 'pointer' }}
-                    onClick={handleGoogle} className="loginButton"
+                    onClick={handleGoogle}
+                     className="loginButton"
                 ><i className="fab fa-google"></i>oogle Login
                     </span>
             </div>
