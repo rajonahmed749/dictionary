@@ -1,3 +1,7 @@
-#preloader{
+#preloader {
     width: 100px;
+}
+
+.word {
+    font-size: 17px;
 }

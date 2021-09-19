@@ -67,18 +67,15 @@ function App() {
             <Route exact path="/">
               <Home LightMode={LightMode} />
             </Route>
-            {/* <Route path="/addWord">
-              <Profile />
-            </Route> */}
             <PrivateRoute path="/addWord">
               <Profile />
             </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/learning">
+            <PrivateRoute path="/learning">
               <Learning LightMode={LightMode} />
-            </Route>
+            </PrivateRoute>
           </ChangePath>
           <Footer LightMode={LightMode} />
         </div>

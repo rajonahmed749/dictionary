@@ -9,9 +9,8 @@ const AddWord = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [word, setWord] = useState({});
     const history = useHistory();
-    console.log("from addeded", loggedInUser)
     const onSubmit = data => {
-        console.log(word)
+        
         const wordData = {
             word: data.word,
             wordMean: data.wordMean,
@@ -41,8 +40,7 @@ const AddWord = () => {
             history.push('/learning')
         }
     }
-
-    console.log(watch("example"));
+    
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="form-card">
             <input type="text" name="word" placeholder="Type a word" {...register("word", { required: true })} />

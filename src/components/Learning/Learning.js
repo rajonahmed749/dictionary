@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 import preloader from "../../data/preloader.gif";
 import "./Learning.css"
+import { UserContext } from '../../App';
 
 
 const Learning = ({ LightMode }) => {
-    function createData(name, calories, fat, carbs, protein) {
-        return { name, calories, fat, carbs, protein };
-    }
-
-    const rows = [
-        createData('super', 'the best thing', 'excellent', 'other'),
-        createData('fake', 'false news', 'bad', 'others'),
-        createData('goods', 'vagetables', 'excellent', 'other'),
-        createData('কলা', 'এক প্রকার সবজি', 'সব্জি', 'ভিটামিন'),
-        createData('supasdfer', 'thsdf thing', 'excelsdfent',),
-        createData('sudfper', 'the fdfdfest dfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher'),
-        createData('Icdfsdfsdwich', 'the fdfdfesdfgfd dfgf sdsfdfdfdfdfdfdsdfsffing', 'excdfnt', 'otdfher')
-    ];
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [words, setWords] = useState([])
+    const id = loggedInUser.email;
+    console.log(id)
+    useEffect(() => {
+        fetch(`http://localhost:7000/getWords/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setWords(data)
+                if (data) {
+                    document.getElementById('preloader').style.display = 'none'
+                }
+            });
+    }, [])
 
     let count = 1;
     return (
@@ -40,35 +42,35 @@ const Learning = ({ LightMode }) => {
                             <TableCell
                                 style={{ color: LightMode ? "black" : "white" }} align="center">Meaning</TableCell>
                             <TableCell
-                                style={{ color: LightMode ? "black" : "white" }} >Synonyms
+                                style={{ color: LightMode ? "black" : "white" }} align="right">Synonyms
                              </TableCell>
                             <TableCell
-                                style={{ color: LightMode ? "black" : "white" }} align="right">Others</TableCell>
+                                style={{ color: LightMode ? "black" : "white" }} align="right">Added by</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {
-                            rows.map((row) => (
-                                <TableRow
-                                    key={row.name}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell
-                                        component="th" scope="row"
-                                        style={{ color: LightMode ? "black" : "white" }}>
-                                        {count++}. {row.name}
-                                    </TableCell>
-                                    <TableCell
-                                        style={{ color: LightMode ? "black" : "white" }} align="center">{row.calories}
-                                    </TableCell>
-                                    <TableCell
-                                        style={{ color: LightMode ? "black" : "white" }} align="right">{row.fat}
-                                    </TableCell>
-                                    <TableCell
-                                        style={{ color: LightMode ? "black" : "white" }} align="right">{row.carbs}
-                                    </TableCell>
-                                </TableRow>
-                            ))
+                            words.map(word => {
+                                return (
+                                    <TableRow key={word._id}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell component="th" scope="row"
+                                            style={{ color: LightMode ? "black" : "white" }}>
+                                            {count++}. <span className="word">{word.word}</span>
+                                        </TableCell>
+                                        <TableCell
+                                            style={{ color: LightMode ? "black" : "white" }} align="center">{word.wordMean}
+                                        </TableCell>
+                                        <TableCell
+                                            style={{ color: LightMode ? "black" : "white" }} align="right">{word.synonym}
+                                        </TableCell>
+                                        <TableCell
+                                            style={{ color: LightMode ? "black" : "white" }} align="right">{word.user}
+                                        </TableCell>
+                                    </TableRow>
+                                )
+                            })
                         }
                     </TableBody>
                 </Table>
