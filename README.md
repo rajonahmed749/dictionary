@@ -28,4 +28,4 @@ Open [https://github.com/rajonahmed749/dictionary-server](https://github.com/raj
 
 ### `Live Site`
 
-Open [https://word-warrior.web.app/]https://word-warrior.web.app/) to view its live site.
+Open [https://word-warrior.web.app/](https://word-warrior.web.app/) to view its live site.
