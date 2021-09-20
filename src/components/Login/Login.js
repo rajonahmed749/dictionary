@@ -5,6 +5,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { UserContext } from '../../App';
+import googleIcon from '../../data/google-icon.svg';
+import google from '../../data/google.svg'
 import "./Login.css"
 
 const Login = () => {
@@ -23,32 +25,14 @@ const Login = () => {
             .then((result) => {
                 var credential = result.credential;
                 var token = credential.accessToken;
-                // console.log(result.user)
                 const { displayName, email, photoURL } = result.user;
                 const signedInUser = { name: displayName, email, img: photoURL }
                 setLoggedInUser(signedInUser)
-                // storeAuthToken();
                 history.replace(from);
-                // console.log(signedInUser);
             }).catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                var email = error.email;
-                var credential = error.credential;
-                // console.log(errorCode, errorMessage, email, credential);
+                alert("sorry you have facing trouble!")
             });
     }
-
-    // const storeAuthToken = () => {
-    //     firebase.auth().currentUser.getIdToken(true)
-    //         .then(function (idToken) {
-    //             sessionStorage.setItem('token', idToken);
-    //             history.replace(from);
-    //             console.log(idToken)
-    //         }).catch(function (error) {
-    //             console.log(error)
-    //         });
-    // }
 
     return (
         <Container>
@@ -58,8 +42,9 @@ const Login = () => {
                     style={{ cursor: 'pointer' }}
                     onClick={handleGoogle}
                     className="loginButton"
-                ><i className="fab fa-google"></i>oogle Login
-                    </span>
+                >
+                    <img id="googleIcon" src={googleIcon} alt="google icon" />&nbsp; login with Google
+                </span>
             </div>
         </Container>
     );
