@@ -16,9 +16,16 @@
     iv. Couple of NPM packages
 
 ##### ` visit server code`
+    https://github.com/rajonahmed749/dictionary-server
+
+
+<!-- 
 Open [https://github.com/rajonahmed749/dictionary-server](https://github.com/rajonahmed749/dictionary-server) to view its server side code
+
+
+ -->
 
 
 ### `Live Site`
 
-    https://word-warrior.web.app/
+Open [https://word-warrior.web.app/]https://word-warrior.web.app/) to view its live site.
