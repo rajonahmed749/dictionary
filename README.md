@@ -1,4 +1,27 @@
-# The Dictionary app
+
+# Word Warrior Dictionary
+
+### This is a Kids school website based on MERN technology. In this project, Those technologies and tools are used given below,
+
+#### `Front End:`
+    i. React js
+    ii. React-Bootstrap
+    iii. Firebase for user authentication
+    iv. React Hook Form
+
+#### `Backend: `
+    i. Node js
+    ii. Express js
+    iii. MongoDB
+    iv. Couple of NPM packages
+
+##### ` visit server code`
+https://github.com/rajonahmed749/red-mountain-server
+
+
+### `Live Site`
+
+    https://red-mountain-kids.web.app/# The Dictionary app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
