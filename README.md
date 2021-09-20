@@ -1,7 +1,10 @@
 
 # Word Warrior Dictionary
 
-### This is a Kids school website based on MERN technology. In this project, Those technologies and tools are used given below,
+### This is a progressive web application based on MERN technologies. Through this dictionary you can search word as well as by google log in system, you can add & see your added word list. The most important thing is you can also use this dictionary like native apps but you have to download this first.
+
+
+### `Those technologies and tools are used: `
 
 #### `Front End:`
     i. React js
@@ -17,13 +20,6 @@
 
 ##### ` visit server code`
     https://github.com/rajonahmed749/dictionary-server
-
-
-<!-- 
-Open [https://github.com/rajonahmed749/dictionary-server](https://github.com/rajonahmed749/dictionary-server) to view its server side code
-
-
- -->
 
 
 ### `Live Site`
