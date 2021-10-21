@@ -1,11 +1,6 @@
 import React, { createContext } from "react";
 import { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch as ChangePath,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch as ChangePath, Route, Link } from "react-router-dom";
 import './App.css';
 import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
@@ -39,7 +34,7 @@ function App() {
       <Router>
         <div style={{
           minHeight: "100vh",
-          backgroundColor: LightMode ? "#fff" : '#0a192f',
+          backgroundColor: LightMode ? "#fff" : '#032353',
           color: LightMode ? "black" : 'white',
           transition: "all 0.5s linear"
         }}>

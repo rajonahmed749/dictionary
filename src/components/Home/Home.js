@@ -12,14 +12,13 @@ const Home = ({ LightMode }) => {
     const dictionaryApi = async () => {
         try {
             const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
-            // console.log("actual data", data);
+            
             setMeanings(data.data)
         }
         catch (error) {
             console.log(error);
         }
     }
-
 
     useEffect(() => {
         dictionaryApi()
